@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/name', function () { return "Giorgi Gelashvili"; });
+Route::get('/age', function () { return "21 🌱"; });
+Route::get('/hobby', function () { return "Cybersecurity 🤖"; });
+ 
