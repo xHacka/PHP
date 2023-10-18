@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+$PO = new PostController();
+
+Route::get('/', function () use ($PO) {
+    $posts = $PO->getPosts();
+    return view('Home.home', compact("posts"));
+});
+
+Route::get('/welcome', function () {
     return view('welcome');
 });

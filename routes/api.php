@@ -20,8 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get   ('posts',      [PostController::class, 'index' ]);
-Route::get   ('posts/{id}', [PostController::class, 'view'  ]);
-Route::post  ('posts',      [PostController::class, 'store' ]);
-Route::put   ('posts/{id}', [PostController::class, 'update']);
-Route::delete('posts/{id}', [PostController::class, 'delete']);
+Route::get   ('posts'      , [PostController::class, 'index'    ]);
+Route::get   ('posts/{id}' , [PostController::class, 'view'     ]);
+Route::post  ('posts'      , [PostController::class, 'store'    ]);
+Route::put   ('posts/{id}' , [PostController::class, 'update'   ]);
+Route::delete('posts/purge', [PostController::class, 'deleteAll']);
+Route::delete('posts/{id}' , [PostController::class, 'delete'   ]);
