@@ -12,7 +12,7 @@ class PostController extends Controller {
         $this->posts = database_path($this->filename);
     }
 
-    private function getPosts() {
+    public function getPosts() {
         return json_decode(file_get_contents($this->posts), true);
     }
 
@@ -40,7 +40,7 @@ class PostController extends Controller {
     public function store(Request $request) {
         $posts = $this->getPosts();
         $newPost = $request->only("title", "content");
-        $id = count($posts);
+        $id = $this->getValidIndex($posts);
         $posts[$id] = $newPost;
         $this->savePosts($posts);
         $newPost["id"] = $id;
@@ -66,5 +66,18 @@ class PostController extends Controller {
         unset($posts[$id]);
         $this->savePosts($posts);
         return response()->json(["msg" => "Deleted Successfully"], 200);
+    }
+
+    public function deleteAll() { 
+        $this->savePosts([]);
+        return response()->json(["msg" => "Deleted Successfully"], 200);
+    }
+
+    public function getValidIndex($posts) {
+        $id = count($posts);
+        while (array_key_exists($id, $posts)) {
+            $id++;
+        }
+        return ++$id;
     }
 }
