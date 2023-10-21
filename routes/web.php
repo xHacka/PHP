@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 $PO = new PostController();
 
-Route::get('/', function () use ($PO) {
+Route::get('/quiz2', function () use ($PO) {
     $posts = $PO->getPosts();
     return view('Home.home', compact("posts"));
 });
+
+Route::get('/', [QuizController::class, 'index']);
 
 Route::get('/welcome', function () {
     return view('welcome');
