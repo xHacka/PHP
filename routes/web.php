@@ -27,3 +27,5 @@ Route::get('/', [QuizController::class, 'index']);
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/quiz4/{quiz?}', [QuizController::class, 'createOrUpdate'])->name('quiz');

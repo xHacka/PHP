@@ -13,8 +13,10 @@ return new class extends Migration {
       $table->id();
       $table->string("title");
       $table->string("description");
-      // $table->timestamps();
+      $table->boolean('is_active')->default(true);
+      $table->timestamp('updated_at');
       $table->timestamp('created_at');
+      $table->timestamp('deleted_at')->nullable();
     });
   }
 
