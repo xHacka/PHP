@@ -22,10 +22,13 @@ Route::get('/quiz2', function () use ($PO) {
     return view('Home.home', compact("posts"));
 });
 
-Route::get('/', [QuizController::class, 'index']);
+Route::get('/quiz3', [QuizController::class, 'index']);
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
 Route::get('/quiz4/{quiz?}', [QuizController::class, 'createOrUpdate'])->name('quiz');
+
+// Quiz 6
+Route::get('/', [QuizController::class, 'index']);

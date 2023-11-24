@@ -17,6 +17,7 @@ return new class extends Migration {
       $table->timestamp('updated_at');
       $table->timestamp('created_at');
       $table->timestamp('deleted_at')->nullable();
+      $table->string('photo')->nullable();
     });
   }
 
