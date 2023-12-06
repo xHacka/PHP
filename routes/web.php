@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\MySuperMiddlewareController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +32,8 @@ Route::get('/welcome', function () {
 Route::get('/quiz4/{quiz?}', [QuizController::class, 'createOrUpdate'])->name('quiz');
 
 // Quiz 6
-Route::get('/', [QuizController::class, 'index']);
+// Route::get('/', [QuizController::class, 'index']);
+
+Route::get('/secret', [MySuperMiddlewareController::class, 'secret'])->middleware("mysupermiddleware");;
+Route::get('/error', [MySuperMiddlewareController::class, 'error']);
+Route::get('/', [MySuperMiddlewareController::class, 'home']);
