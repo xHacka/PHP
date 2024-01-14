@@ -13,12 +13,12 @@
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $quiz->name) }}" required>
             </div>
             <div class="mb-3">
-                <label for="name" class="form-label">Quiz Image</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('image', $quiz->image) }}" required>
+                <label for="image" class="form-label">Quiz Image</label>
+                <input type="text" class="form-control" id="image" name="image" value="{{ old('image', $quiz->image) }}" required>
             </div>
             <div class="mb-3">
-                <label for="name" class="form-label">Quiz Description</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('description', $quiz->description) }}" required>
+                <label for="description" class="form-label">Quiz Description</label>
+                <input type="text" class="form-control" id="description" name="description" value="{{ old('description', $quiz->description) }}" required>
             </div>
             <button type="submit" class="btn btn-primary">Update Quiz</button>
             <a href="{{ route('quizzes.index') }}" class="btn btn-secondary">Cancel</a>
