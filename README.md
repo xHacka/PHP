@@ -21,13 +21,13 @@ Make sure you have the following installed on your machine:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/laravel-quiz-project.git
+    git clone https://github.com/xHacka/PHP.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd laravel-quiz-project
+    cd PHP
     ```
 
 3. Install PHP dependencies:
@@ -111,3 +111,5 @@ Refer to the respective controllers and routes for more details on functionality
 ## License
 
 This project is open-sourced under the [MIT license](LICENSE).
+
+<!-- Design Is Very Human -->
