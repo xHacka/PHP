@@ -87,8 +87,6 @@ class QuestionController extends Controller {
     }
 
     public function updateJob(Request $request, Quiz $quiz, int $questionId) {
-        $logInfo = new \Symfony\Component\Console\Output\ConsoleOutput();
-        $logInfo->writeln([$quiz, $questionId, $request]);
         $this->getQuestion($quiz->id, $questionId)->first()->update($request->all());
         return redirect()->route('quizzes.index')->with('success', 'Quiz updated successfully');
     }

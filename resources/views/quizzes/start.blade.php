@@ -9,7 +9,7 @@
             @foreach($quiz->questions as $i => $question)
             <div class="card p-4 rounded-lg mb-4 question" data-question="{{ $i }}">
                 <div style="width: 30rem;" class="h-auto border-solid">
-                    <img class="rounded img-fluid" src="{{ $quiz->image }}" alt="{{ $quiz->name }}" />
+                    <img class="rounded img-fluid" src="{{ $question->image }}" alt="{{ $question->question }}" />
                 </div>
                 <h2 class="h2 font-weight-bold my-2">
                     <span class="pr-5">({{ $i + 1 }} / {{ $questions_length }})</span>
