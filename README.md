@@ -11,7 +11,7 @@ Follow the steps below to set up and run the project on your local machine:
 
 Make sure you have the following installed on your machine:
 
-- [PHP](https://www.php.net/) (>= 7.4)
+- [PHP](https://www.php.net/) (>= 8.1)
 - [Composer](https://getcomposer.org/)
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
